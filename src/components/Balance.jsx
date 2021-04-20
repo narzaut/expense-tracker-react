@@ -3,20 +3,20 @@ import React from 'react';
 const Balance = (props) => {
     return (
         <>
-            <div className='balance-container'>
-              <div className='balance-box'>
-                <div className='balance-text'>My Balance</div>
-                <div className='balance'>$xxx</div>
+            <div>
+              <div>
+                <h4>My Balance</h4>
+                <h1 id='balance'>$0.00</h1>
               </div>
             </div>
-            <div className='income-container'>
-              <div className='income-box'>
-                <div className='income-text'>Income text</div>
-                <div className='income'>INCOME</div>
+            <div className='inc-exp-container '>
+              <div>
+                <h4>Income</h4>
+                <p className="money plus">+$0.00</p>
               </div>
-              <div className='expenses-box'>
-                <div className='expenses-text'>Expenses text</div>
-                <div className='expenses'>EXPENSES</div>
+              <div>
+                <h4>Expense</h4>
+                <p className="money minus">-$0.00</p>
               </div>
             </div>
         </>

@@ -1,25 +1,22 @@
 import React, {useState} from 'react';
 
 const AddTransaction= (props) => {
- // const [description, setDescription] = useState('');
+  const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
   return (
-    <div className='transaction-container'>
-      <div className='add-transaction-text'>Add a new transaction</div>
+    <>
+      <h3>Add new transation</h3>
       <hr className='style-one'></hr>
-      <div className='text-input-box'>
-        <div className='text'>Text</div>
-        <input className='text-input' type='text'  placeholder='Enter text' onChange = {event => setDescription(event.target.value)}></input>
+      <div className='form-control'>
+        <label htmlFor='text'>Text</label>
+        <input type='text' value={description} onChange={event => setDescription(event.target.value)} placeholder='Enter text'></input>
       </div>
-      <div className='text-input-box'>
-        <div className='text'>Amount</div>
-        <div className='text'>(negative - expense, positive - income)</div>
-        <input className='text-input' type = 'number' placeholder='Amount' onChange = {event => setAmount(event.target.value)}></input>
+      <div className='form-control'>
+        <label htmlFor='amount'>Amount <br /> (negative - expense, positive - income) </label>
+        <input type = 'number' value={amount} onChange={event => setAmount(event.target.value)} placeholder='Amount'></input>
       </div>
-      <div className='transaction-btn-box'>
-        <button className='transaction-btn' onClick = {props.onAddBtnClick}>Add transaction</button>
-      </div>
-    </div>
+      <button className='btn'>Add transaction</button>
+    </>
   )
     
 }
