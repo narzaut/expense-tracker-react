@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Title = () => {
+const Title = (props) => {
     return (
         <div className = 'title-box'>
-            <h2>Expense Tracker</h2>
+            <h2>{props.title}</h2>
         </div>
     )
     

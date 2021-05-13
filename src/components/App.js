@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Title from './Title';
 import Balance from './Balance';
 import HistoryList from './HistoryList'
@@ -6,16 +6,16 @@ import AddTransaction from './AddTransaction'
 
 
 function App() {
-
+  const title = 'Expense Tracker'
   return (
-    <div>
-       <Title />
-      <div className = 'container'>
-        <Balance />
-        <HistoryList />
-        <AddTransaction />
-      </div>
-    </div>
+      <>
+        <Title title = {title}/>
+        <div className = 'container'>
+          <Balance />
+          <HistoryList />
+          <AddTransaction />
+        </div>
+      </>
   );
 }
 

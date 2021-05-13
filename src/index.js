@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import HistoryLog from './components/HistoryLog'
 import reportWebVitals from './reportWebVitals';
+import {TransactionsProvider} from './components/context/GlobalState'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <TransactionsProvider>
+    <Router>
+      <Route path='/' exact component = {App} />
+      <Route path='/log' component = {HistoryLog} /> 
+    </Router>
+  </TransactionsProvider>
+,
   document.getElementById('root')
 );
 

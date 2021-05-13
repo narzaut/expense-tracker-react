@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
-import History from './History'
+import React, {useContext} from 'react';
+import {GlobalContext} from './context/GlobalState'
+import ShowAllButton from './ShowAllButton';
+import TransactionsList from './TransactionsList'
 
-const HistoryList = (props) => {
+const HistoryList = () => {
+  const [transactions, setTransactions] = useContext(GlobalContext);
 
-  
-  
-  return (
-        <div className='list'>
-            <h3>History</h3>
-            <hr className='style-one'></hr>
-            <ul id='list' className='list'>
-              <li className='minus'>
-                Cash <span>-$400</span><button className='delete-btn'>x</button>
-              </li>
-            </ul>
 
-        </div>
+    return (
+      <>
+        <h3>Transactions history</h3>
+        <hr></hr>
+        {transactions.length == 0 ? <span>History log is empty.<br/>No transactions found.</span>: <TransactionsList limit = {4}/>}
+        {transactions.length > 4 ? <ShowAllButton/> : ''}
+      </>
     )
-    
+
 }
 
 export default HistoryList
