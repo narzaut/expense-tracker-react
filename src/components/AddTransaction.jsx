@@ -20,6 +20,13 @@ export const AddTransaction= (props) => {
     setAmount('')  
   }
   
+  const handleEnter = evt => {
+    if (evt.key === 'Enter'){
+      evt.preventDefault();
+      return (amount != 0 && description != '' && amount != undefined) ? addTransaction(evt) : ''
+    }
+  }
+
   return (
     <>
       <h3>Add new transaction</h3>
@@ -30,7 +37,7 @@ export const AddTransaction= (props) => {
       </div>
       <div className='form-control'>
         <label htmlFor='amount'>Amount <br /> (negative - expense, positive - income) </label>
-        <input type = 'number' value = { amount } onChange={ event => setAmount(event.target.value) } placeholder='Enter transaction amount'></input>
+        <input onKeyPress={ evt => handleEnter(evt) } type = 'number' value = { amount } onChange={ event => setAmount(event.target.value) } placeholder='Enter transaction amount'></input>
       </div>
       <button className='btn' onClick = { (amount != 0 && description != '' && amount != undefined)? addTransaction : '' } id='addBtn'>Add transaction</button>
     </>
