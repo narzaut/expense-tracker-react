@@ -1,13 +1,15 @@
-import React, {useContext} from 'react';
-import {GlobalContext} from './context/GlobalState'
-const Balance = (props) => {
-  const [transactions, setTransactions] = useContext(GlobalContext);
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState'
+
+export const Balance = (props) => {
+  const { transactionsState } = useContext(GlobalContext)
+  const [transactions, setTransactions] = transactionsState;
   
   const amounts = transactions.map ( transaction => transaction.amount) 
   const income = amounts.filter(item => item > 0).reduce((a, b) => a+b, 0)
   const expense = amounts.filter(item => item < 0).reduce((a, b) => a+b, 0)
   const balance = amounts.reduce((a,b) => a + b, 0)
-  console.log(transactions.length)
+
   return (
     <>
         <div>
@@ -31,4 +33,3 @@ const Balance = (props) => {
     
 }
 
-export default Balance

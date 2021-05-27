@@ -1,9 +1,10 @@
-import React, {useContext} from 'react';
-import {GlobalContext} from './context/GlobalState'
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState'
 import History from './History'
 
 const TransactionsList = (props) => {
-  const [transactions, setTransactions] = useContext(GlobalContext);
+  const { transactionsState } = useContext(GlobalContext)
+  const [transactions, setTransactions] = transactionsState;
   const reversedTransactionsList = transactions.slice(0).reverse()
   
   return (
