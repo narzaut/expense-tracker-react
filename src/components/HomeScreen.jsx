@@ -6,7 +6,7 @@ import { AddTransaction } from './AddTransaction'
 export const HomeScreen = () => {
   return (
     <>
-      <div className = 'container'>
+      <div className = 'container '>
 				<h2>Expense Tracker</h2>
         <Balance />
         <HistoryList />

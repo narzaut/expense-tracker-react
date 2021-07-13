@@ -201,3 +201,18 @@ input[type='number'] {
   display:flex;
   justify-content: space-between;
 }
+
+@media  (max-width: 420px) {
+	.container {
+		width: 280px;
+	}
+	.delete-btn{
+		right: -17%;
+	}
+}
+
+@media  (min-width: 420px) and (max-width: 600px){
+	.container {
+		width: 300px;
+	}
+}
